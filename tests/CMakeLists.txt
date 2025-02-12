@@ -1,9 +1,7 @@
 find_package(doctest QUIET)
-if(doctest_FOUND)
-  message(STATUS "Found system installed \"doctest\". Using system installed library.")
-else()
-  message(STATUS "\"doctest\" not installed. Fetching from GitHub.")
+if(NOT doctest_FOUND)
   include(FetchContent)
+  message(STATUS "\"doctest\" not installed. Fetching from GitHub.")
   FetchContent_Declare(
     doctest
     GIT_REPOSITORY https://github.com/doctest/doctest.git

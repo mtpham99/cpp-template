@@ -1,6 +1,14 @@
+#if not defined(USE_IMPORT_STD)
+module;
+
+#include <string_view>
+#endif
+
 export module hello;
 
+#if defined(USE_IMPORT_STD)
 import std;
+#endif
 
 namespace hello {
 

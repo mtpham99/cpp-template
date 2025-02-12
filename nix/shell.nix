@@ -18,8 +18,6 @@ pkgs.mkShell.override { stdenv = pkgs.llvmPackages.libcxxStdenv; } {
     pkgs.ninja
     pkgs.ccache
 
-    pkgs.doctest
-
     pkgs.pre-commit
     pkgs.cppcheck
     pkgs.cmake-format
