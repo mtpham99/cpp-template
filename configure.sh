@@ -8,7 +8,8 @@ CMAKE_GENERATOR="Ninja"
 CMAKE_BUILD_TYPE="Debug"
 CMAKE_CXX_COMPILER_LAUNCHER="$(which ccache)"
 CMAKE_CXX_COMPILER="$(which clang++)"
-CMAKE_CXX_FLAGS="-Wall -Wextra -Wshadow -Wconversion -Wpedantic -Werror ${CMAKE_CXX_FLAGS:-}"
+CMAKE_CXX_FLAGS="-fsanitize=address,leak,undefined -fno-omit-frame-pointer" # -fno-exceptions
+CMAKE_CXX_FLAGS="-std=c++2a -fno-rtti -Wall -Wextra -Wshadow -Wconversion -Wpedantic -Werror ${CMAKE_CXX_FLAGS:-}"
 CMAKE_COMPILE_COMMANDS="ON"
 
 BUILD_EXAMPLES="ON"
