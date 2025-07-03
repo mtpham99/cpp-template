@@ -21,6 +21,11 @@ if ! command -v cmake >/dev/null 2>&1; then
 	exit 1
 fi
 
+if command -v ccache >/dev/null 2>&1; then
+	echo "Clearing ccache..."
+	ccache -cC
+fi
+
 cmake \
 	-S "$PROJECT_DIR"\
 	-B "$BUILD_DIR" \
